@@ -1,4 +1,3 @@
 # bookstore build with react native. 
 stackathon project for fullstack academy.
-(https://user-images.githubusercontent.com/83997567/158003222-643d288a-7acf-4ae4-9387-3cd8a70d17d8.png)
-scan barcode for live demo
+![scan for live demo](https://user-images.githubusercontent.com/83997567/158003279-2dae7068-cc70-4dbf-a142-32440fb7361a.png)
