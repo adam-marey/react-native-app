@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Image, StyleSheet } from 'react-native';
 import AppText from '../components/AppText';
 
-import ListItems from '../components/ListItems';
+import ListItem from '../components/ListItem';
 import colors from '../config/colors';
 
 function ListingDetailsScreen(props) {
@@ -10,10 +10,10 @@ function ListingDetailsScreen(props) {
     <View>
       <Image style={styles.image} source={require('../assets/novel.jpg')} />
       <View style={styles.detailsContainer}>
-        <AppText style={styles.title}>red cover novel for sale</AppText>
-        <AppText style={styles.price}>$10</AppText>
+        <AppText style={styles.title}>Red cover novel for sale</AppText>
+        <AppText style={styles.price}>$12</AppText>
         <View style={styles.userContainer}>
-          <ListItems
+          <ListItem
             image={require('../assets/sulaiman.jpg')}
             title="Sulaiman Marey"
             subTitle="4 Listings"
@@ -46,5 +46,4 @@ const styles = StyleSheet.create({
     marginVertical: 40,
   },
 });
-
 export default ListingDetailsScreen;
