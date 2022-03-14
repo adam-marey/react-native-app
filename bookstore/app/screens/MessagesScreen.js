@@ -15,8 +15,8 @@ const initialMessages = [
   },
   {
     id: 2,
-    title: 'T2',
-    description: 'D2',
+    title: 'PT1',
+    description: 'P1',
     image: require('../assets/sulaiman.jpg'),
   },
 ];
