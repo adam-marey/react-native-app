@@ -18,7 +18,8 @@ const initialMessages = [
   {
     id: 2,
     title: 'Sulaiman Marey',
-    description: "I'm interested in this item",
+    description:
+      "I'm interested in this item, I think this Item is really cool, how much is the last price",
     image: require('../assets/sulaiman.jpg'),
   },
 ];

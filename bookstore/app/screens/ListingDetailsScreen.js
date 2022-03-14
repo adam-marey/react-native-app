@@ -10,8 +10,8 @@ function ListingDetailsScreen(props) {
     <View>
       <Image style={styles.image} source={require('../assets/novel.jpg')} />
       <View style={styles.detailsContainer}>
-        <Text style={styles.title}>Red jacket for sale</Text>
-        <Text style={styles.price}>$100</Text>
+        <Text style={styles.title}> Old Novel </Text>
+        <Text style={styles.price}>$10</Text>
         <View style={styles.userContainer}>
           <ListItem
             image={require('../assets/sulaiman.jpg')}
