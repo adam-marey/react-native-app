@@ -1,11 +1,12 @@
 import React from 'react';
 import { StyleSheet, View, FlatList } from 'react-native';
 
-import Screen from '../components/Screen';
-import ListItem from '../components/lists/ListItem';
-import ListItemSeparatorComponent from '../components/lists/ListItemSeparator';
+import { ListItem, ListItemSeparator } from '../components/lists';
 import colors from '../config/colors';
 import Icon from '../components/Icon';
+import routes from '../navigation/routes';
+import Screen from '../components/Screen';
+import useAuth from '../auth/useAuth';
 
 const menuItems = [
   {
@@ -21,16 +22,19 @@ const menuItems = [
       name: 'email',
       backgroundColor: colors.secondary,
     },
+    targetScreen: routes.MESSAGES,
   },
 ];
 
-function AccountScreen(props) {
+function AccountScreen({ navigation }) {
+  const { user, logOut } = useAuth();
+
   return (
     <Screen style={styles.screen}>
       <View style={styles.container}>
         <ListItem
-          title="Sulaiman Marey"
-          subTitle="sulaiman11@gmail.com"
+          title={user.name}
+          subTitle={user.email}
           image={require('../assets/sulaiman.jpg')}
         />
       </View>
@@ -38,7 +42,7 @@ function AccountScreen(props) {
         <FlatList
           data={menuItems}
           keyExtractor={(menuItem) => menuItem.title}
-          ItemSeparatorComponent={ListItemSeparatorComponent}
+          ItemSeparatorComponent={ListItemSeparator}
           renderItem={({ item }) => (
             <ListItem
               title={item.title}
@@ -48,13 +52,15 @@ function AccountScreen(props) {
                   backgroundColor={item.icon.backgroundColor}
                 />
               }
+              onPress={() => navigation.navigate(item.targetScreen)}
             />
           )}
         />
       </View>
       <ListItem
         title="Log Out"
-        IconComponent={<Icon name="logout" backgroundColor="#ffe66d" />}
+        IconComponent={<Icon name="logout" backgroundColor="#B42B51" />}
+        onPress={() => logOut()}
       />
     </Screen>
   );
